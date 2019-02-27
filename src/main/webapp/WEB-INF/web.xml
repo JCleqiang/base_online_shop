@@ -2,6 +2,40 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
-<web-app>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>Archetype Created Web Application</display-name>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.leqiang222.base_online_shop.web.filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <servlet>
+    <servlet-name>BaseServlet</servlet-name>
+    <servlet-class>com.leqiang222.base_online_shop.web.base.BaseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BaseServlet</servlet-name>
+    <url-pattern>/base_servlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.leqiang222.base_online_shop.web.servlet.UserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/user_servlet</url-pattern>
+  </servlet-mapping>
+
 </web-app>

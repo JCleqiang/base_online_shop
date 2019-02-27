@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans>
+    <bean id="UserDao" class="com.leqiang222.base_online_shop.dao.impl.UserDaoImpl"></bean>
+    <bean id="UserService" class="com.leqiang222.base_online_shop.service.impl.UserServiceImpl"></bean>
+</beans>
