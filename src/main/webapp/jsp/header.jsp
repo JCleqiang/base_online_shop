@@ -53,17 +53,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">首页</a>
+                <a class="navbar-brand" href="${pageContext.request.contextPath}/user_servlet?method=index">首页</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" id="myUL">
-                    <%--
-                        <c:forEach items="${allCats}" var="c">
-                            <li><a href="#">${c.cname}</a></li>
-                        </c:forEach>
-                    --%>
+                    <c:forEach items="${ALL_CATEGOTY}" var="c">
+                        <li><a href="#">${ALL_CATEGOTY.cname}</a></li>
+                    </c:forEach>
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
@@ -81,12 +79,11 @@
 </body>
 <script>
     $(function(){
-        $.post("${pageContext.request.contextPath}/CategoryServlet",{"method":"findAllCats"},function(dt){
-            // console.log(dt);
-            //<li><a href="#">${c.cname}</a></li>
+        $.post("${pageContext.request.contextPath}/category_servlet?method=findAllCats",{"method":"findAllCats"},function(dt){
+            $("#myUL").innerHTML = "";
             //jquery遍历数据
             $.each(dt,function(i,obj){
-                var li="<li><a href='${pageContext.request.contextPath}/ProductServlet?method=findProductsWithCidAndPage&num=1&cid="+obj.cid+"'>"+obj.cname+"</a></li>";
+                var li="<li><a href='${pageContext.request.contextPath}/product_servlet?method=findProductsWithCidAndPage&num=1&cid="+obj.cid+"'>"+obj.cname+"</a></li>";
                 $("#myUL").append(li);
             });
 

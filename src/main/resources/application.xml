@@ -3,4 +3,12 @@
 <beans>
     <bean id="UserDao" class="com.leqiang222.base_online_shop.dao.impl.UserDaoImpl"></bean>
     <bean id="UserService" class="com.leqiang222.base_online_shop.service.impl.UserServiceImpl"></bean>
+
+    <bean id="CategoryDao" class="com.leqiang222.base_online_shop.dao.impl.CategoryDaoImpl"></bean>
+    <bean id="CategoryService" class="com.leqiang222.base_online_shop.service.impl.CategoryServiceImpl"></bean>
+
+    <bean id="ProductDao" class="com.leqiang222.base_online_shop.dao.impl.ProductDaoImpl"></bean>
+    <bean id="ProductService" class="com.leqiang222.base_online_shop.service.impl.ProductServiceImpl"></bean>
+
+
 </beans>

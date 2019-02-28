@@ -19,6 +19,10 @@ import java.sql.SQLException;
 public class UserServlet extends BaseServlet {
     UserService userService = (UserService) BeanFactory.createObject("UserService");
 
+    public String index(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        return "/index.jsp";
+    }
+
     public String registerUI(HttpServletRequest request, HttpServletResponse response) throws Exception {
         return "/jsp/register.jsp";
     }
