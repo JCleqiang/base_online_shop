@@ -1,7 +1,10 @@
 package com.leqiang222.base_online_shop.web.servlet;
 
+import com.leqiang222.base_online_shop.domain.Category;
 import com.leqiang222.base_online_shop.domain.Product;
+import com.leqiang222.base_online_shop.service.CategoryService;
 import com.leqiang222.base_online_shop.service.ProductService;
+import com.leqiang222.base_online_shop.service.impl.CategoryServiceImpl;
 import com.leqiang222.base_online_shop.service.impl.ProductServiceImpl;
 import com.leqiang222.base_online_shop.utils.PageModel;
 import com.leqiang222.base_online_shop.utils.UUIDUtil;
@@ -16,11 +19,19 @@ public class ProductServlet extends BaseServlet {
         //服务端获取到pid
         String pid=request.getParameter("pid");
         //根据pid查询对应的商品信息,
-        ProductService ProductService=new ProductServiceImpl();
-        Product pro=ProductService.findProductByPid(pid);
+        ProductService productService=new ProductServiceImpl();
+        Product pro=productService.findProductByPid(pid);
         //将商品放入request,
-        request.setAttribute("pro", pro);
+        request.setAttribute("PRODUCT", pro);
 
+        //
+        CategoryService categoryService = new CategoryServiceImpl();
+        Category category = categoryService.findProductByCid(pro.getCid());
+
+        request.getSession().setAttribute("PRODUCT_CATEGORY", category);
+
+
+        //
         String ranStr= UUIDUtil.getId();
         //在session存放一份随机字符串
         request.getSession().setAttribute("ranStr",ranStr);

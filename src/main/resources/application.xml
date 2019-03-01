@@ -10,5 +10,4 @@
     <bean id="ProductDao" class="com.leqiang222.base_online_shop.dao.impl.ProductDaoImpl"></bean>
     <bean id="ProductService" class="com.leqiang222.base_online_shop.service.impl.ProductServiceImpl"></bean>
 
-
 </beans>

@@ -9,4 +9,6 @@ public interface CategoryDao {
     List<Category> findAllCats()throws SQLException;
 
     void saveCat(Category c)throws SQLException;
+
+    Category findProductByCid(String cid) throws SQLException;
 }

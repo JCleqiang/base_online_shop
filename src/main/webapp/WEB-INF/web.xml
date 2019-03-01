@@ -57,5 +57,13 @@
     <url-pattern>/product_servlet</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>com.leqiang222.base_online_shop.web.servlet.CartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/cart_servlet</url-pattern>
+  </servlet-mapping>
 
 </web-app>

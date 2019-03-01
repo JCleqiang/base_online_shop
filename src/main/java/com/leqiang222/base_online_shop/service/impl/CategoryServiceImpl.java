@@ -20,4 +20,9 @@ public class CategoryServiceImpl implements CategoryService {
     public void saveCat(Category c) throws SQLException {
         categoryDao.saveCat(c);
     }
+
+    @Override
+    public Category findProductByCid(String cid) throws SQLException {
+        return categoryDao.findProductByCid(cid);
+    }
 }
